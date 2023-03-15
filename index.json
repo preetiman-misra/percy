@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "path": "data/nested_1/some-content.txt",
+      "content": "some contents\n",
+      "file_type": "txt"
+    },
+    {
+      "path": "data/lovely.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>Lovely</title>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  </head>\n  <body>\n    <h1>Just another HTML page</h1>\n  </body>\n</html>\n",
+      "file_type": "html"
+    },
+    {
+      "path": "data/post.md",
+      "content": "# Welcome to the markdown show!\n",
+      "file_type": "md"
+    },
+    {
+      "path": "data/hello.txt",
+      "content": "Just a text file.\n",
+      "file_type": "txt"
+    }
+  ]
+}
