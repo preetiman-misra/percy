@@ -68,7 +68,7 @@ Will result in the following `index.json` file:
 
 # Documentation
 
-The documentation can be perused by using the following commands in the `percy` directory:
+The documentation can be perused by using the following command in the `percy` directory:
 
 ```zsh
 cargo doc --no-deps --open
