@@ -3,7 +3,7 @@
 use std::{
     ffi::OsString,
     fs::{read_dir, File},
-    io::{BufReader, Read},
+    io::{BufReader, Read, Result},
     path::{Path, PathBuf},
 };
 
@@ -62,19 +62,18 @@ impl Files {
     }
 
     /// Recursively index files from the given path.
-    pub fn index_dir(&mut self, index_path: &Path) {
-        if let Ok(entries) = read_dir(index_path) {
-            for entry in entries {
-                if let Ok(item) = entry {
-                    let file_type = item.file_name();
-                    if item.file_type().unwrap().is_dir() {
-                        self.index_dir(item.path().as_path());
-                    } else {
-                        let note = NoteFile::new(item.path(), file_type);
-                        self.notes.push(note);
-                    }
-                }
+    pub fn index_dir(&mut self, index_path: &Path) -> Result<()> {
+        let entries = read_dir(index_path)?;
+        for entry in entries {
+            let item = entry?;
+            let file_type = item.file_name();
+            if item.file_type()?.is_dir() {
+                self.index_dir(item.path().as_path());
+            } else {
+                let note = NoteFile::new(item.path(), file_type);
+                self.notes.push(note);
             }
         }
+        Ok(())
     }
 }
