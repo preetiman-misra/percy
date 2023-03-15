@@ -29,12 +29,12 @@ index the files inside accordingly.
 Indexing:
 
 ```
-data/
-  nested_one/
-    content.md
-    other.txt
-  hello.html
-  wow.txt
+| data/
+| - nested_one/
+| - - content.md
+| - - other.txt
+| hello.html
+| wow.txt
 ```
 
 Will result in the following `index.json` file:
