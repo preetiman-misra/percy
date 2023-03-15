@@ -33,8 +33,8 @@ Indexing:
 | - nested_one/
 | - - content.md
 | - - other.txt
-| hello.html
-| wow.txt
+| - hello.html
+| - wow.txt
 ```
 
 Will result in the following `index.json` file:
